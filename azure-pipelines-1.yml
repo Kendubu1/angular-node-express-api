@@ -67,12 +67,11 @@ stages:
       runOnce:
         deploy:
           steps:
-          - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: nodepenguin'
+          - task: AzureRmWebAppDeployment@4
             inputs:
-              azureSubscription: $(azureSubscription)
-              appType: webAppLinux
-              appName: $(webAppName)
-              runtimeStack: 'NODE|10.10'
+              ConnectionType: 'AzureRM'
+              azureSubscription: 'Internal Potato Consumption (fbb69af7-f9a0-4e69-ba10-b4eb445e3963)'
+              appType: 'webApp'
+              WebAppName: 'nodepaperclip'
+              VirtualApplication: 'site\wwwroot\api'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run start'
