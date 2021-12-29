@@ -74,6 +74,6 @@ stages:
               appType: 'webApp'
               WebAppName: 'nodepaperclip'
               VirtualApplication: 'api'
-              packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               enableCustomDeployment: true
               DeploymentType: 'zipDeploy'
