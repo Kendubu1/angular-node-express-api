@@ -76,4 +76,5 @@ stages:
               VirtualApplication: 'api'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               enableCustomDeployment: true
-              DeploymentType: 'zipDeploy'
+              DeploymentType: 'webDeploy'
+
